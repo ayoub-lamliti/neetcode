@@ -1,0 +1,11 @@
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        n_min = prices[0]
+        profit = 0
+        for price in prices:
+            if price < n_min:
+                n_min = price
+            t = abs(n_min - price)
+            if t > profit:
+                profit = t            
+        return profit
